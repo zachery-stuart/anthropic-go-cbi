@@ -5,7 +5,7 @@ type Model string
 
 // https://docs.anthropic.com/claude/docs/models-overview
 const (
-	Claude3_5Sonnet Model = "claude-3.5-sonnet-20240620"
+	Claude3_5Sonnet Model = "claude-3-5-sonnet-20240620"
 
 	// Most powerful model for highly complex tasks.
 	Claude3Opus Model = "claude-3-opus-20240229"
