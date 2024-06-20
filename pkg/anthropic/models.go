@@ -5,6 +5,8 @@ type Model string
 
 // https://docs.anthropic.com/claude/docs/models-overview
 const (
+	Claude3_5Sonnet Model = "claude-3-5-sonnet-20240620"
+	
 	// Most powerful model for highly complex tasks.
 	Claude3Opus Model = "claude-3-opus-20240229"
 
@@ -71,7 +73,7 @@ func (m Model) IsImageCompatible() bool {
 
 func (m Model) IsMessageCompatible() bool {
 	switch m {
-	case Claude3Opus, Claude3Sonnet, Claude3Haiku, ClaudeV2_1:
+	case Claude3_5Sonnet, Claude3Opus, Claude3Sonnet, Claude3Haiku, ClaudeV2_1:
 		return true
 	}
 	return false
