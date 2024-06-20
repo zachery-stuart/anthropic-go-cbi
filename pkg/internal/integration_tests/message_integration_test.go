@@ -4,7 +4,7 @@ import (
 	"os"
 	"testing"
 
-	"github.com/madebywelch/anthropic-go/v2/pkg/anthropic"
+	"github.com/zachery-stuart/anthropic-go-cbi/v2/pkg/anthropic"
 )
 
 func TestMessageWithToolsIntegration(t *testing.T) {

@@ -1,3 +1,3 @@
-module github.com/madebywelch/anthropic-go/v2
+module github.com/zachery-stuart/anthropic-go-cbi/v2
 
 go 1.20

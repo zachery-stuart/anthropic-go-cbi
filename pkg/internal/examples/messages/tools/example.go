@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/madebywelch/anthropic-go/v2/pkg/anthropic"
+	"github.com/zachery-stuart/anthropic-go-cbi/v2/pkg/anthropic"
 )
 
 func main() {
