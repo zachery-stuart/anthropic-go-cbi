@@ -73,7 +73,13 @@ func (c *Client) sendMessageRequest(req *MessageRequest) (*MessageResponse, erro
 	}
 	request.Header.Set("Content-Type", "application/json")
 	request.Header.Set("X-Api-Key", c.apiKey)
-	request.Header.Set("anthropic-beta", AnthropicAPIToolsBeta)
+
+	// include max token beta for sonnet 3.5
+	if req.Model == Claude3_5Sonnet {
+		request.Header.Set("anthropic-beta", strings.Join([]string{AnthropicAPIToolsBeta, AnthropicAPISonnet35TokenBeta}, ","))
+	} else {
+		request.Header.Set("anthropic-beta", AnthropicAPIToolsBeta)
+	}
 
 	// Use the DoRequest method to send the HTTP request
 	response, err := c.doRequest(request)
@@ -110,6 +116,10 @@ func (c *Client) handleMessageStreaming(events chan MessageStreamResponse, errCh
 	request.Header.Set("Content-Type", "application/json")
 	request.Header.Set("X-Api-Key", c.apiKey)
 	request.Header.Set("Accept", "text/event-stream")
+
+	if req.Model == Claude3_5Sonnet {
+		request.Header.Set("anthropic-beta", AnthropicAPISonnet35TokenBeta)
+	}
 
 	response, err := c.doRequest(request)
 	if err != nil {

@@ -12,6 +12,8 @@ const (
 	AnthropicAPIMessagesBeta = "messages-2023-12-15"
 	// AnthropicAPIToolsBeta is the beta version of the Anthropic API that enables the tools endpoint.
 	AnthropicAPIToolsBeta = "tools-2024-04-04"
+	// AnthropicAPISonnet35TokenBeta
+	AnthropicAPISonnet35TokenBeta = "max-tokens-3-5-sonnet-2024-07-15"
 )
 
 // doRequest sends an HTTP request and returns the response, handling any non-OK HTTP status codes.
